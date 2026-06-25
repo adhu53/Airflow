@@ -20,7 +20,7 @@ def export_parse(**context):
 with DAG(
     dag_id="Export_jobs",
     start_date=datetime(2026,6,25),
-    schedule=CronDataIntervalTimetable(cron="*/2 * * * *", timezone="utc"),
+    schedule=CronDataIntervalTimetable(cron="30 0 * * *", timezone="utc"),
     catchup=False
 ) as dag:
     #ssh operator. get the export files name and peform xcom_push
